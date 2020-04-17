@@ -5,7 +5,8 @@ import Component from "./components/componentExm";
 function App() {
   return (
     <div>
-      <div>Hello</div>
+      <div className="title">Test App</div>
+      <Component />
       <Component />
     </div>
   );

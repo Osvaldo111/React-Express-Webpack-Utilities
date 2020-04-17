@@ -14,7 +14,7 @@ class Component extends React.Component {
     this.state = {};
   }
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
   }
 
   render() {
@@ -24,10 +24,10 @@ class Component extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    storeProps: state
+    storeProps: state,
   };
 }
 const mapDispatchToProps = {
-  actionFunction
+  actionFunction,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

@@ -3,6 +3,7 @@ const { defaults } = require("jest-config");
 module.exports = {
   //
   moduleNameMapper: {
-    "^.+\\.(css|less|scss)$": "babel-jest"
-  }
+    "^.+\\.(css|less|scss)$": "babel-jest",
+  },
+  typeAcquisition: { include: ["jest"] },
 };
