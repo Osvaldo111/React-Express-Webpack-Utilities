@@ -5,21 +5,33 @@ module.exports = {
   entry: "./app/src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index_bundle.js"
+    filename: "index_bundle.js",
   },
   module: {
     rules: [
       { test: /\.(js)$/, use: "babel-loader" },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
-      }
-    ]
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+    ],
   },
   mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "app/public/index.html"
-    })
-  ]
+      favicon: "app/src/favicon.ico",
+      template: "app/public/index.html",
+    }),
+  ],
 };
